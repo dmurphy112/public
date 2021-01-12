@@ -1,0 +1,33 @@
+#+ TITLE: README.org
+#+ AUTHOR: Daniel Murphy, dev@danielmurphy.email, dmurphy@pilotfiber.com
+#+ DATE: [2021-01-12]
+
+# overview:
+Currently we have pre-patches throughout the pilot network that are not being efficiently tracked.
+Spreadsheets are out of date the day after they are made, as are any external, unlinked notes.
+
+We can easily view pre-patch capacity with loaded filtered searches, but currently only two people at Pilot can do so.
+This plugin will be a very simple dashboard that displays  pre-patch capacity by site.
+
+We currently track pre-patches by the native netbox tagging, so this is not a far strecth by any means.
+
+For the notes on active development, check dan's github, they will be placed here as development progresses.
+
+# basic structure of plugin:
+We will be heavily following the official docs on this, since it needs to be readable for everyone else.
+Below is the suggested plugin file structure, [[https://netbox.readthedocs.io/en/stable/plugins/development/#plugin-structure][found here on the official docs]]:
+
+patch_tracker/
+  - plugin_name/
+    - templates/
+      - plugin_name/
+        - *.html
+    - __init__.py
+    - middleware.py
+    - navigation.py
+    - signals.py
+    - template_content.py
+    - urls.py
+    - views.py
+  - README
+  - setup.py
