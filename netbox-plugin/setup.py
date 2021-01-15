@@ -17,7 +17,7 @@ Since I have read up on Distutlis, we should be specifying the two packages by n
 '''
 setup(
 	name = 'dans netbox plugins',
-	version = '0.2'
+	version = '0.2',
 	description = 'creating example and Pilot\'s first plugin',
 	url = 'https://github.com/dmurphy112',
 	author = 'daniel murphy',
