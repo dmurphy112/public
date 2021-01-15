@@ -1,0 +1,18 @@
+root@0b95cc14cc61:/opt/netbox/netbox/public/netbox-plugin# python setup.py develop
+running develop
+running egg_info
+creating dans_netbox_plugins.egg-info
+writing dans_netbox_plugins.egg-info/PKG-INFO
+writing dependency_links to dans_netbox_plugins.egg-info/dependency_links.txt
+writing top-level names to dans_netbox_plugins.egg-info/top_level.txt
+writing manifest file 'dans_netbox_plugins.egg-info/SOURCES.txt'
+reading manifest file 'dans_netbox_plugins.egg-info/SOURCES.txt'
+writing manifest file 'dans_netbox_plugins.egg-info/SOURCES.txt'
+running build_ext
+Creating /usr/local/lib/python3.7/site-packages/dans-netbox-plugins.egg-link (link to .)
+Adding dans-netbox-plugins 0.2 to easy-install.pth file
+
+Installed /opt/netbox/netbox/public/netbox-plugin
+Processing dependencies for dans-netbox-plugins==0.2
+Finished processing dependencies for dans-netbox-plugins==0.2
+root@0b95cc14cc61:/opt/netbox/netbox/public/netbox-plugin# 
