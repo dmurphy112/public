@@ -1,0 +1,17 @@
+from django.urls import path
+from . import views
+
+
+# importing a bit of code that I found in the ttl255 blog post.
+# the following gives us a response when we navigate to the plugin URL
+from django.<a href="http" target="_blank">http</a> import HttpResponse
+def dummy_view(request):
+    html = "<html><body>NetBox Animal Sounds.</body></html>"
+    return HttpResponse(html)
+
+
+
+
+urlpatterns = [
+    path('random/', views.RandomAnimalView.as_view(), name='random_animal'),
+]

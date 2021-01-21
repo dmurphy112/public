@@ -1,0 +1,8 @@
+from extras.plugins import PluginMenuItem
+
+menu_items = (
+    PluginMenuItem(
+        link = "plugins:netbox_animal_sounds:animal_sounds",
+        link_text = "Animal Sounds",
+        )
+    )

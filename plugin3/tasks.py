@@ -19,7 +19,7 @@ PYTHON_VER = os.getenv("PYTHON_VER", "3.7")
 NETBOX_VER = os.getenv("NETBOX_VER", "master")
 
 # Name of the docker image/container
-NAME = os.getenv("IMAGE_NAME", "test_docker_image")
+NAME = os.getenv("IMAGE_NAME", "ntc-netbox-plugin-onboarding")
 PWD = os.getcwd()
 
 COMPOSE_FILE = "development/docker-compose.yml"
