@@ -16,6 +16,7 @@ from setuptools import find_packages, setup
 Since I have read up on Distutlis, we should be specifying the two packages by name, but the netbox documentation uses this `find_packages()` func. Will test out, if it does not work, I will statically spec our packages, animal_sounds and patch_tracker.
 '''
 setup(
+
 	name = 'dans netbox plugins',
 	version = '0.2'
 	description = 'creating example and Pilot\'s first plugin',
@@ -23,7 +24,7 @@ setup(
 	author = 'daniel murphy',
     author_email = 'dev@danielmurphy.email',
 	license = 'Apache 2.0',
-	install_requires = [],
+  install_requires = [],
 	packages = find_packages(),
 	include_package_data = True,
 	zip_safe = False)
