@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-
+from . import views
 from django.urls import path
 
 
@@ -10,4 +10,5 @@ def dummy_view(request):
 
 urlpatterns = [
     path("", dummy_view, name="animal-sounds-dummy"),
+    path('random/', views.RandomAnimalView.as_view(), name = 'random_animal'),
 ]

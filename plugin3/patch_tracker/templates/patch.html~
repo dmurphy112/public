@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% with config=settings.PLUGINS_CONFIG.netbox_animal_sounds %}
+<h2 class="text-center" style="margin-top: 200px">
+  The {{animal}} says hi.
+</h2>
+{% endwith %}
+{% endblock %}
