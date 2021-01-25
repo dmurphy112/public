@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+        <h2 class="text-center" style="margin-top: 200px">
+            {% if patch %}
+            The patch selected randomly is: {patch.name}
+            It lives at site: {patch.site}
+
+            Congrats on getting this page to render!
+            {% else %}
+                No patches have been created yet!
+            {% endif %}
+        </h2>
+{% endblock %}

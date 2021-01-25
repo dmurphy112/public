@@ -168,7 +168,7 @@ def create_user(context, user="admin", netbox_ver=NETBOX_VER, python_ver=PYTHON_
 
 
 @task
-def makemigrations(context, app_name=PLUGIN_NAMES, name="", netbox_ver=NETBOX_VER, python_ver=PYTHON_VER):
+def makemigrations(context, app_name=["netbox_animal_sounds", "patch_tracker"], name="", netbox_ver=NETBOX_VER, python_ver=PYTHON_VER):
 
     """
     Here Dan is going off the rails a bit and trying something new.
@@ -184,25 +184,30 @@ def makemigrations(context, app_name=PLUGIN_NAMES, name="", netbox_ver=NETBOX_VE
         netbox_ver (str): NetBox version to use to build the container
         python_ver (str): Will use the Python version docker image to build from
     """
+    print(f'running the first context.run for PostGres')
     context.run(
         f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} up -d postgres",
         env={"NETBOX_VER": netbox_ver, "PYTHON_VER": python_ver},
     )
-
+    app_name = ["netbox_animal_sounds", "patch_tracker"]
     # adding a loop here to iterate through list app_name which contains a list of plugins
+    print(f'current type of app_name= {type(app_name)}. Current value= {app_name}')
     for plugin in app_name:
+        print(f'plugin = {plugin}')
         if name:
+            print(f"running with name= {name} and plugin= {plugin}")
             context.run(
-                f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} run netbox python manage.py makemigrations {app_name} --name {name}",
+                f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} run netbox python manage.py makemigrations {plugin} --name {name}",
                 env={"NETBOX_VER": netbox_ver, "PYTHON_VER": python_ver},
                 )
         else:
+            print(f"running with plugin={plugin}")
             context.run(
-                f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} run netbox python manage.py makemigrations {app_name}",
+                f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} run netbox python manage.py makemigrations {plugin}",
                 env={"NETBOX_VER": netbox_ver, "PYTHON_VER": python_ver},
                 )
 
-
+    print('Turning down the docker container.')
     context.run(
         f"docker-compose -f {COMPOSE_FILE} -p {BUILD_NAME} down",
         env={"NETBOX_VER": netbox_ver, "PYTHON_VER": python_ver},
